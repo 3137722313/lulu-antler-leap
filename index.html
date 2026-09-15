@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="鹿角跳跳：操控紫色鹿角小兽，穿过云杉峡谷，找回月光晶核。"
+    />
+    <meta name="theme-color" content="#5c8df3" />
+    <title>鹿角跳跳 · 像素冒险</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="game-card" aria-label="鹿角跳跳游戏">
+        <div class="game-topline">
+          <div class="brand-lockup">
+            <span class="pixel-gem" aria-hidden="true"></span>
+            <div>
+              <p class="eyebrow">LULU'S ANTLER LEAP</p>
+              <h1>鹿角跳跳</h1>
+            </div>
+          </div>
+          <div class="top-actions">
+            <button id="music-button" class="music-button" type="button" aria-pressed="true" aria-label="关闭背景音乐">♫ 音乐：开</button>
+            <button id="restart-button" class="restart-button" type="button" aria-label="重新开始本关">
+              <span aria-hidden="true">↻</span> 重玩
+            </button>
+          </div>
+        </div>
+
+        <div class="screen-frame">
+          <canvas
+            id="game"
+            width="960"
+            height="540"
+            tabindex="0"
+            aria-label="鹿角跳跳游戏画面。使用方向键或 A、D 移动，空格、W 或上方向键跳跃。"
+          ></canvas>
+
+          <div id="start-overlay" class="game-overlay" aria-live="polite">
+            <div class="overlay-card">
+              <span class="tiny-crest" aria-hidden="true">✦</span>
+              <p class="stage-label">云杉峡谷 · 01</p>
+              <h2>找回月光晶核</h2>
+              <p>收集星果、踩过捣蛋的苔团，抵达峡谷尽头的月光灯塔。</p>
+              <button id="start-button" class="start-button" type="button">开始冒险</button>
+              <p class="key-hint">A / D 或 ← / → 移动　 空格 / W / ↑ / 点画面 跳跃</p>
+            </div>
+          </div>
+
+          <div id="end-overlay" class="game-overlay end-overlay is-hidden" aria-live="polite">
+            <div class="overlay-card">
+              <span id="end-crest" class="tiny-crest" aria-hidden="true">✦</span>
+              <p id="end-label" class="stage-label">峡谷已点亮</p>
+              <h2 id="end-title">太棒了！</h2>
+              <p id="end-copy">月光晶核重新照亮了云杉峡谷。</p>
+              <div class="result-row">
+                <span>本次星果</span><strong id="result-score">000</strong>
+              </div>
+              <button id="again-button" class="start-button" type="button">再玩一次</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-strip" aria-label="游戏说明">
+          <div class="status-tip"><span class="tip-icon">✦</span> 踩到苔团头顶可以把它弹开</div>
+          <div class="status-tip desktop-tip"><span class="tip-icon">⌁</span> 跳跃时按住方向可飞得更远</div>
+          <div class="status-score">最佳 <strong id="best-score">000</strong></div>
+        </div>
+      </section>
+
+      <nav class="touch-controls" aria-label="触屏操作">
+        <div class="touch-group">
+          <button class="touch-button" type="button" data-control="left" aria-label="向左移动">←</button>
+          <button class="touch-button" type="button" data-control="right" aria-label="向右移动">→</button>
+        </div>
+        <button class="touch-button touch-jump" type="button" data-control="jump" aria-label="跳跃">跳</button>
+      </nav>
+    </main>
+    <script src="./game.js"></script>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a3b798f85aab89cc',t:'MTc4OTQ3NDk1Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
